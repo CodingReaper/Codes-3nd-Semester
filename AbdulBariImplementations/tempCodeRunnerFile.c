@@ -1,0 +1,2 @@
+stack * xd;
+    // //xd = push('#');

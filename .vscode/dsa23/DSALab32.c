@@ -1,0 +1,171 @@
+#include <stdio.h>
+
+int main()
+{
+    int r, c, r1, c1,size=0,k=1;
+    printf("Enter Number Of Rows and Columns of Array 1 Respectively:");
+    scanf("%d%d", &r, &c);
+    printf("Enter Number Of Rows and Columns of Array 2 Respectively:");
+    scanf("%d%d", &r1, &c1);
+    int arr[r][c], arr2[r1][c1],sum[r][c];
+    if (r == r1 && c == c1)
+    {
+        printf("Enter Array 1 Elements:");
+        for (int i = 0; i < r; i++){
+            for (int j = 0; j < c; j++){
+                scanf("%d", &arr[i][j]);
+            }
+        }
+        printf("Enter Array 2 Elements:");
+        for (int i = 0; i < r1; i++){
+            for (int j = 0; j < c1; j++){
+                scanf("%d", &arr2[i][j]);
+            }
+        }
+
+        for(int i=0;i<r;i++){
+            for(int j=0;j<c;j++){
+                sum[i][j]=arr[i][j]+arr2[i][j];
+            }
+        }
+        printf("\nThe  1st 2D Array Is:\n");
+        for (int i = 0; i < r; i++){
+            for (int j = 0; j < c; j++){
+                printf("%d\t", arr[i][j]);
+            }
+            printf("\n");
+        }
+        printf("\nThe  2nd 2D Array Is:\n");
+        for (int i = 0; i < r1; i++){
+            for (int j = 0; j < c1; j++){
+                printf("%d\t", arr2[i][j]);
+            }
+            printf("\n");
+        }
+        printf("\nSummation:\n");
+        for(int i=0;i<r;i++){
+            for(int j=0;j<c;j++){
+                printf("%d\t",sum[i][j]);
+                if(sum[i][j] != 0){
+                    size++;
+                }
+            } printf("\n");
+        }
+        int M[size+1][3];
+        M[0][0]=r;
+        M[0][1]=c;
+        M[0][2]=size;
+        for(int i=0;i<r;i++){
+            for(int j=0;j<c;j++){
+                if(sum[i][j] != 0){
+                    M[k][0]=i;
+                    M[k][1]=j;
+                    M[k][2]=sum[i][j];
+                    k++;
+                }
+            }
+        }
+        printf("\n3 Tuple Represetation of Summation Array :\n");
+        printf("\nROW\tCOLUMN\tVALUE\n");
+        for(int i=0;i<size+1;i++){
+            for(int j=0;j<3;j++){
+                printf("%d\t",M[i][j]);
+            }
+            printf("\n");
+        }
+    }   
+    else{
+        printf("ORDER of Matrix Not Same.");
+    }
+}
+
+
+// #include <stdio.h>
+
+// int main()
+// {
+//     int r, c, r1, c1;
+//     printf("Enter Number Of Rows and Columns of Array 1 Respectively:");
+//     scanf("%d%d", &r, &c);
+//     printf("Enter Number Of Rows and Columns of Array 2 Respectively:");
+//     scanf("%d%d", &r1, &c1);
+//     int arr[r][c], arr2[r1][c1],sum[r][c];
+//     if (r == r1 && c == c1)
+//     {
+//         printf("Enter Array 1 Elements:");
+//         for (int i = 0; i < r; i++){
+//             for (int j = 0; j < c; j++){
+//                 scanf("%d", &arr[i][j]);
+//             }
+//         }
+//         printf("Enter Array 2 Elements:");
+//         for (int i = 0; i < r1; i++){
+//             for (int j = 0; j < c1; j++){
+//                 scanf("%d", &arr2[i][j]);
+//             }
+//         }
+
+//         for(int i=0;i<r;i++){
+//             for(int j=0;j<c;j++){
+//                 sum[i][j]=arr[i][j]+arr2[i][j];
+//             }
+//         }
+//         printf("\nThe  1st 2D Array Is:\n");
+//         for (int i = 0; i < r; i++){
+//             for (int j = 0; j < c; j++){
+//                 printf("%d\t", arr[i][j]);
+//             }
+//             printf("\n");
+//         }
+//         printf("\nThe  2nd 2D Array Is:\n");
+//         for (int i = 0; i < r1; i++){
+//             for (int j = 0; j < c1; j++){
+//                 printf("%d\t", arr2[i][j]);
+//             }
+//             printf("\n");
+//         }
+//         printf("\nSummation:\n");
+//         for(int i=0;i<r;i++){
+//             for(int j=0;j<c;j++){
+//                 printf("%d\t",sum[i][j]);
+//             }
+//             printf("\n");
+//         }
+//         printf("\n3 TUPLE REPRESENTATION OF ALL 2D MATRICES---- \n");
+//         printf("\n3 Tuple Represetation of Array 1:\n");
+//         printf("\nROW\tCOLUMN\tVALUE\n");
+//         for(int i=0;i<r;i++){
+//             for(int j=0;j<c;j++){
+//                 if(arr[i][j] != 0){
+//                     printf("%d\t%d\t%d\t",i,j,arr[i][j]);
+//                 }
+//             }
+//             printf("\n");
+//         }
+//         printf("\n3 Tuple Represetation of Array 2:\n");
+//         printf("\nROW\tCOLUMN\tVALUE\n");
+//         for(int i=0;i<r1;i++){
+//             for(int j=0;j<c1;j++){
+//                 if(arr2[i][j] != 0){
+//                     printf("%d\t%d\t%d\t",i,j,arr2[i][j]);
+//                 }
+//             }
+//             printf("\n");
+//         }
+//         printf("\n3 Tuple Represetation of Summation Array :\n");
+//         printf("\nROW\tCOLUMN\tVALUE\n");
+//         for(int i=0;i<r;i++){
+//             for(int j=0;j<c;j++){
+//                 if(sum[i][j] != 0){
+//                     printf("%d\t%d\t%d\t",i,j,sum[i][j]);
+//                 }
+//             }
+//             printf("\n");
+//         }
+//     }   
+//     else{
+//         printf("ORDER of Matrix Not Same.");
+//     }
+// }
+
+
