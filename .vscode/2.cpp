@@ -13,4 +13,5 @@ int main(){
     si=(p*r*t)/100;
     cout<<"simple interest is:"<<si;
     cout<<"\ncompound interest is: "<<ci;
+    cout<<ci;
 }
