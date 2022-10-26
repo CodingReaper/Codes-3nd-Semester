@@ -35,17 +35,20 @@ queue *enque(int value)
     }
 }
 
-queue * dequeue(){
-    if(front == NULL){
+queue *dequeue()
+{
+    if (front == NULL)
+    {
         printf("Queue is Empty.\n");
         return front;
     }
-    else{
-        queue * ptr = front;
+    else
+    {
+        queue *ptr = front;
         int d = front->data;
         front = front->next;
         free(ptr);
-        printf("%d is Dequeued.\n",d);
+        printf("%d is Dequeued.\n", d);
         return front;
     }
 }
@@ -63,32 +66,34 @@ void display()
 
 int main()
 {
-    queue * xd;
-    int x,y;
-    do{
+    queue *xd;
+    int x, y;
+    do
+    {
         printf("Followig Operations:\n");
         printf("1.ENQUEUE\n");
         printf("2.DEQUEUE\n");
         printf("3.DISPLAY\n");
         printf("4.EXIT\n");
         printf("Enter choice :");
-        scanf("%d",&x);
-        switch(x){
-            case 1:
+        scanf("%d", &x);
+        switch (x)
+        {
+        case 1:
             printf("Enter Value:");
-            scanf("%d",&y);
+            scanf("%d", &y);
             xd = enque(y);
             break;
-            case 2:
+        case 2:
             xd = dequeue();
             break;
-            case 3:
+        case 3:
             display();
             break;
-            case 4:
+        case 4:
             printf("Quit.\n");
             break;
         }
-    }while(x != 4);
+    } while (x != 4);
     return 0;
 }
