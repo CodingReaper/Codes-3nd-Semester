@@ -1,6 +1,7 @@
-if(obj == obj1){
-        cout<<"Same."<<endl;
-    }
-    else{
-        cout<<"Not Same."<<endl;
-    }
+pt->setdata();
+    pt->salaryf();
+    pt->display();
+
+    pt2->setdata();
+    pt2->salaryf();
+    pt2->display();
