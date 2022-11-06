@@ -134,11 +134,30 @@ char * IntoPost(char * p){
     return postfix;
 }
 
+int evaluate(char * postfix){
+    int x1,x2,r;
+    for(int i = 0;postfix[i] != '0';i++){
+        if(isOperand(postfix[i])){
+            top = push(postfix[i] - '0');
+        }
+        else{
+            x2 = pop();x1 = pop();
+            switch(postfix[i]){
+                case '+':r=x1+x2;push(r);break;
+                case '-':r=x1-x2;push(r);break;
+                case '*':r=x1*x2;push(r);break;
+                case '/':r=x1/x2;push(r);break;
+            }
+        }
+    }
+
+}
+
 int main()
 {
     // stack * xd;
     // //xd = push('#');
-    char *infix = "a+b*(c^d-e)^(f+g*h)-i";
+    char *infix = "3+b*(c^d-e)^(f+g*h)-i";
     char *pos = IntoPost(infix);
     printf("%s ", pos);
     return 0;

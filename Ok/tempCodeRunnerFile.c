@@ -1,3 +1,3 @@
-xd = push(50,8);
-    // xd = push(59,9);
-    // display();
+ // xd = insert(xd,10);
+    // xd = insert(xd,20);
+    // xd = insert(xd,5);
