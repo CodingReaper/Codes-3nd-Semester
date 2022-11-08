@@ -28,7 +28,7 @@ BST *insert(BST *t, int x)
     return t;
 }
 
-void inorder(BST* root)
+void inorder(BST* root)  //left,root,right
 {
     if (root != NULL) {
         inorder(root->left);
@@ -56,16 +56,16 @@ BST * deleteNode(BST * root, int key)
         root->right = deleteNode(root->right, key);
     else {
         if (root->left == NULL) {
-            struct node* temp = root->right;
+            BST * temp = root->right;
             free(root);
             return temp;
         }
         else if (root->right == NULL) {
-            struct node* temp = root->left;
+            BST * temp = root->left;
             free(root);
             return temp;
         }
-        struct node* temp = minValueNode(root->right);
+        BST * temp = minValueNode(root->right);
         root->data = temp->data;
         root->right = deleteNode(root->right, temp->data);
     }
